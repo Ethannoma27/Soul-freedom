@@ -1,0 +1,192 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #222;
+    overflow-x: hidden;
+}
+
+h1, h2, p {
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* 首页 */
+#home {
+    min-height: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 100%);
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    padding: 15px 8px;
+}
+
+#home h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Georgia', serif;
+    margin-bottom: 5px;
+}
+
+#home p {
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+/* 自由与奴役 */
+#paradox {
+    padding: 36px 15px;
+    background-color: #333;
+    color: #ccc;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s;
+}
+
+#paradox h2 {
+    font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#paradox .container {
+    margin-top: 10px;
+}
+
+#paradox .text {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 集权与自由 */
+#authoritarian {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 15px;
+    background-color: #444;
+    text-align: center;
+    min-height: 30vh;
+    opacity: 0;
+    animation: fadeIn 2s forwards 2s;
+}
+
+#authoritarian h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#authoritarian p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+#lock-icon {
+    width: 45px;
+    height: 45px;
+    background-image: url('lock-icon.svg');  /* 确保此路径正确 */
+    background-size: cover;
+    background-color: #f39c12;  /* 用黄色做背景色，临时检查是否有显示 */
+    margin-top: 12px;
+    opacity: 0;
+    animation: fadeIn 2s forwards 3s, lockIconAnimation 3s infinite alternate;
+}
+
+/* 教育与觉醒 */
+#education {
+    padding: 20px 15px;
+    background-color: #222;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 2s forwards 4s;
+}
+
+#education h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+#education .spark {
+    width: 25px;
+    height: 25px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    animation: sparkEffect 2s infinite alternate;
+    margin: 8px auto;
+}
+
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sparkEffect {
+    0% {
+        transform: scale(1);
+        background-color: #f39c12;
+    }
+    100% {
+        transform: scale(1.2);
+        background-color: #e74c3c;
+    }
+}
+
+@keyframes lockIconAnimation {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes birdAnimation {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-10px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+     }
+}
